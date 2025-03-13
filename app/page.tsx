@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -10,8 +9,11 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import HeroBackground3D from "@/components/hero-background-3d"
 
+import bluebitLogo from "../public/bluebit_logo.png"
+import mlscLogo from "../public/mlsc-logo.png"
+
 export default function LandingPage() {
-  const [scrollY, setScrollY] = useState(0)
+  // const [scrollY, setScrollY] = useState(0)
 
   // useEffect(() => {
   //   const handleScroll = () => {
@@ -28,11 +30,23 @@ export default function LandingPage() {
       <header className="fixed top-0 w-full z-50 border-b border-[#4c9eff]/30 bg-[#0a0a1a]/90 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <div className="w-12 h-12 border border-[#4c9eff] flex items-center justify-center pip-boy-border">
-              <span className="text-xs">LOGO 1</span>
+            <div className="w-12 h-12 flex items-center justify-center">
+              <Image
+                src={mlscLogo}
+                alt="mlsc Logo"
+                width={48}
+                height={48}
+                className="object-contain"
+              />
             </div>
-            <div className="w-12 h-12 border border-[#4c9eff] flex items-center justify-center pip-boy-border">
-              <img src="../public/bluebit_logo.png" alt="BlueBit Logo" className="h-full" />
+            <div className="w-12 h-12 flex items-center justify-center">
+              <Image
+                src={bluebitLogo}
+                alt="BlueBit Logo"
+                width={48}
+                height={48}
+                className="object-contain"
+              />
             </div>
           </div>
           <nav>
@@ -62,12 +76,14 @@ export default function LandingPage() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#register"
+                <a
+                  href="https://unstop.com/o/sWA39h2?utm_medium=Share&utm_source=shortUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[#a3d0ff] transition-colors uppercase text-sm tracking-wider pixelated-text"
                 >
                   Register
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>
@@ -91,7 +107,7 @@ export default function LandingPage() {
           >
             <div className="inline-block px-4 py-1 border border-[#4c9eff] text-sm mb-4 pip-boy-border pixelated-text">
               <div className="text-[#a3d0ff] pip-boy-text">
-                MICROSOFT LEARNERS STUDENT CHAPTER PRESENTS
+                MICROSOFT LEARNER'S STUDENT CHAPTER PRESENTS
               </div>
             </div>
           </motion.div>
@@ -120,12 +136,15 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button
-              className="bg-[#4c9eff] text-black hover:bg-[#a3d0ff] hover:text-black transition-all duration-300 text-lg px-8 py-6 rounded-none border border-[#4c9eff] uppercase tracking-wider font-bold pip-boy-button pixelated-text"
-              id="register"
+            <a
+              href="https://unstop.com/o/sWA39h2?utm_medium=Share&utm_source=shortUrl"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Register Now
-            </Button>
+              <Button className="bg-[#4c9eff] text-black hover:bg-[#a3d0ff] hover:text-black transition-all duration-300 text-lg px-8 py-6 rounded-none border border-[#4c9eff] uppercase tracking-wider font-bold pip-boy-button pixelated-text">
+                Register Now
+              </Button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -184,11 +203,19 @@ export default function LandingPage() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 pip-boy-text pixelated-text">EVENT RULEBOOK</h2>
             <p className="max-w-2xl mx-auto text-[#4c9eff]/80 mb-10 pixelated-text">
-              Make sure you understand all the rules before participating in BlueBit. Download our comprehensive
+              Make sure you understand all the rules before participating in BlueBit. View our comprehensive
               rulebook.
             </p>
 
-            <Button className="bg-transparent hover:bg-[#4c9eff] text-[#4c9eff] hover:text-black border-2 border-[#4c9eff] transition-all duration-300 text-lg px-8 py-6 rounded-none uppercase tracking-wider font-bold group pip-boy-button pixelated-text">
+            <Button
+              className="bg-transparent hover:bg-[#4c9eff] text-[#4c9eff] hover:text-black border-2 border-[#4c9eff] transition-all duration-300 text-lg px-8 py-6 rounded-none uppercase tracking-wider font-bold group pip-boy-button pixelated-text"
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/1dPGEpef90w1FPBvY6JDdUm4PdK-cuFGq/view?usp=drive_link",
+                  "_blank",
+                )
+              }
+            >
               <FileText className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               View Rulebook
             </Button>
@@ -202,9 +229,15 @@ export default function LandingPage() {
             className="mt-16"
           >
             <h3 className="text-2xl font-bold mb-6 pip-boy-text pixelated-text">READY TO PARTICIPATE?</h3>
-            <Button className="bg-[#4c9eff] text-black hover:bg-[#a3d0ff] hover:text-black transition-all duration-300 text-lg px-8 py-6 rounded-none border border-[#4c9eff] uppercase tracking-wider font-bold pip-boy-button pixelated-text">
-              Register Now
-            </Button>
+            <a
+              href="https://unstop.com/o/sWA39h2?utm_medium=Share&utm_source=shortUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-[#4c9eff] text-black hover:bg-[#a3d0ff] hover:text-black transition-all duration-300 text-lg px-8 py-6 rounded-none border border-[#4c9eff] uppercase tracking-wider font-bold pip-boy-button pixelated-text">
+                Register Now
+              </Button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -384,17 +417,14 @@ function TimelineItem({ date, title, description, isLeft, index }: TimelineItemP
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className={cn("relative mb-16 md:mb-24 flex", isLeft ? "flex-row" : "flex-row-reverse")}
     >
-      {/* Date */}
       <div className={cn("w-1/2 px-4", isLeft ? "text-right" : "text-left")}>
         <div className="inline-block px-3 py-1 border border-[#4c9eff] text-sm pip-boy-border pixelated-text">
           {date}
         </div>
       </div>
 
-      {/* Center dot */}
       <div className="absolute left-1/2 top-3 transform -translate-x-1/2 w-4 h-4 bg-[#4c9eff] rounded-full border-2 border-[#0a0a1a] z-10 pip-boy-border" />
 
-      {/* Content */}
       <div className={cn("w-1/2 px-4", isLeft ? "text-left" : "text-right")}>
         <h3 className="text-2xl font-bold pip-boy-text mb-2 pixelated-text">{title}</h3>
         <p className="text-[#4c9eff]/80 pixelated-text">{description}</p>
