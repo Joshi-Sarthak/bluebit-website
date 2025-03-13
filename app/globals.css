@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PipBoy";
+  src: url("/fonts/monofonto.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --background: 240 33% 7%;
+  --foreground: 210 100% 65%;
+
+  --card: 240 33% 7%;
+  --card-foreground: 210 100% 65%;
+
+  --popover: 240 33% 7%;
+  --popover-foreground: 210 100% 65%;
+
+  --primary: 210 100% 65%;
+  --primary-foreground: 240 33% 7%;
+
+  --secondary: 210 100% 82%;
+  --secondary-foreground: 240 33% 7%;
+
+  --muted: 240 33% 12%;
+  --muted-foreground: 210 100% 65%;
+
+  --accent: 210 100% 82%;
+  --accent-foreground: 240 33% 7%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 210 100% 65%;
+  --input: 210 100% 65%;
+  --ring: 210 100% 65%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 240 33% 7%;
+  --foreground: 210 100% 65%;
+
+  --card: 240 33% 7%;
+  --card-foreground: 210 100% 65%;
+
+  --popover: 240 33% 7%;
+  --popover-foreground: 210 100% 65%;
+
+  --primary: 210 100% 65%;
+  --primary-foreground: 240 33% 7%;
+
+  --secondary: 210 100% 82%;
+  --secondary-foreground: 240 33% 7%;
+
+  --muted: 240 33% 12%;
+  --muted-foreground: 210 100% 65%;
+
+  --accent: 210 100% 82%;
+  --accent-foreground: 240 33% 7%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 210 100% 65%;
+  --input: 210 100% 65%;
+  --ring: 210 100% 65%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "PipBoy", monospace;
+  background-color: #0a0a1a;
+  color: #4c9eff;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+/* Custom cursor styles */
+html,
+body {
+  cursor: url("/cursor/vault-boy-cursor.png"), auto !important;
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  cursor: url("/cursor/vault-boy-cursor-pointer.png"), pointer !important;
+}
+
+/* Pixelated text effect */
+.pip-boy-text {
+  text-shadow: -1px -1px 0 #4c9eff, 1px -1px 0 #4c9eff, -1px 1px 0 #4c9eff, 1px 1px 0 #4c9eff;
+  image-rendering: pixelated;
+}
+
+/* Enhance the CRT effect */
+.pip-boy-scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(to bottom, transparent 0%, rgba(76, 158, 255, 0.05) 0.5%, transparent 1%);
+  animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
