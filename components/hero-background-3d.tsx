@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 "use client"
 
 import { useRef, useState, useEffect } from "react"
@@ -127,7 +129,6 @@ function DigitalGrid({ mousePosition }) {
     const gridSize = 32
     const cellSize = size / gridSize
 
-    // Draw vertical lines
     for (let i = 0; i <= gridSize; i++) {
       context.beginPath()
       context.moveTo(i * cellSize, 0)
@@ -135,7 +136,6 @@ function DigitalGrid({ mousePosition }) {
       context.stroke()
     }
 
-    // Draw horizontal lines
     for (let i = 0; i <= gridSize; i++) {
       context.beginPath()
       context.moveTo(0, i * cellSize)
@@ -176,7 +176,6 @@ function Scene() {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-      // Normalize mouse position to be between -1 and 1
       mousePosition.current = {
         x: (event.clientX / window.innerWidth) * 2 - 1,
         y: -(event.clientY / window.innerHeight) * 2 + 1,

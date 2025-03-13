@@ -13,14 +13,14 @@ import HeroBackground3D from "@/components/hero-background-3d"
 export default function LandingPage() {
   const [scrollY, setScrollY] = useState(0)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollY(window.scrollY)
+  //   }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  //   window.addEventListener("scroll", handleScroll)
+  //   return () => window.removeEventListener("scroll", handleScroll)
+  // }, [])
 
   return (
     <div className="min-h-screen bg-[#0a0a1a] text-[#4c9eff] font-pip-boy cursor-pip-boy">
