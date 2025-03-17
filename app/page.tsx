@@ -134,21 +134,39 @@ export default function LandingPage() {
 						tech horizons.
 					</motion.p>
 
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, delay: 0.6 }}
-					>
-						<a
-							href="https://unstop.com/o/sWA39h2?utm_medium=Share&utm_source=shortUrl"
-							target="_blank"
-							rel="noopener noreferrer"
+					<div className="flex flex-row justify-center ">
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, delay: 0.6 }}
+							className="mx-4"
 						>
-							<Button className="bg-[#4c9eff] text-black hover:bg-[#a3d0ff] hover:text-black transition-all duration-300 text-lg px-8 py-6 rounded-none border border-[#4c9eff] uppercase tracking-wider font-bold pip-boy-button pixelated-text">
-								Register Now
-							</Button>
-						</a>
-					</motion.div>
+							<a
+								href="https://unstop.com/o/sWA39h2?utm_medium=Share&utm_source=shortUrl"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Button className="bg-[#4c9eff] text-black hover:bg-[#a3d0ff] hover:text-black transition-all duration-300 text-lg px-8 py-6 rounded-none border border-[#4c9eff] uppercase tracking-wider font-bold pip-boy-button pixelated-text">
+									Register Now
+								</Button>
+							</a>
+						</motion.div>
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, delay: 0.6 }}
+						>
+							<a
+								href="https://drive.google.com/drive/folders/1PVanMnI84N_0N9avX9E1vLMupYZrOHv5?usp=sharing"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Button className="hover:bg-[#4c9eff] text-black bg-[#a3d0ff] hover:text-black transition-all duration-300 text-lg px-8 py-6 rounded-none border border-[#4c9eff] uppercase tracking-wider font-bold pip-boy-button pixelated-text">
+									Download Problem Statements
+								</Button>
+							</a>
+						</motion.div>
+					</div>
 				</div>
 			</section>
 
